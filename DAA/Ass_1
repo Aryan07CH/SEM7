@@ -1,0 +1,25 @@
+def fibonacci(n):
+    # Step count initialization
+    step_count = 0
+
+    # Base cases for Fibonacci
+    if n == 0:
+        return 0, step_count
+    elif n == 1:
+        return 1, step_count
+
+    # Initialize the first two Fibonacci numbers
+    a, b = 0, 1
+
+    # Calculate Fibonacci iteratively and count steps
+    for i in range(2, n + 1):
+        a, b = b, a + b
+        step_count += 1  # Each iteration is considered a step
+
+    return b, step_count
+
+# Example usage
+n = 10
+fib_num, steps = fibonacci(n)
+print(f"Fibonacci number at position {n} is {fib_num}")
+print(f"Number of steps taken: {steps}")
